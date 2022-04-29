@@ -6,17 +6,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Trade;
+import com.example.demo.service.TradeService;
 
 @RestController
 public class TradeController {
 	
 	@Autowired
-	TradeRepo repo;
+	TradeService tradeService;
 	
 	@PostMapping("/trade")
 	public String addTrades(@RequestBody Trade trade) {
 		
-		repo.save(trade);
+		tradeService.saveToDb(trade);
 		return "ok";
 	}
 }
