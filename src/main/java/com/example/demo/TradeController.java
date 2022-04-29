@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Trade;
+import com.example.demo.model.TradeResponse;
 import com.example.demo.service.TradeService;
 
 @RestController
@@ -15,9 +16,8 @@ public class TradeController {
 	TradeService tradeService;
 	
 	@PostMapping("/trade")
-	public String addTrades(@RequestBody Trade trade) {
+	public TradeResponse addTrades(@RequestBody Trade trade) {
 		
-		tradeService.saveToDb(trade);
-		return "ok";
+		return tradeService.saveToDb(trade);
 	}
 }

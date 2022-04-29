@@ -39,6 +39,9 @@ public class Trade {
 	
 	private boolean isExpired;
 	
+	public int getSerialNo() {
+		return serialNo;
+	}
 	public String getTradeID() {
 		return tradeID;
 	}

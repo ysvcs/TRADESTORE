@@ -24,8 +24,7 @@ class TradeServiceTests {
 	TradeService service;
 	
 	@Test
-	void testSaveToDb() {
-		
+	void testSaveToDb() {	
 		Trade trade = new Trade("T2", 2, "CP-2", "b2", new Date(2022, 05, 20), new Date(2022, 05, 30), false);
 		service.saveToDb(trade);
 		verify(tr).save(trade);
