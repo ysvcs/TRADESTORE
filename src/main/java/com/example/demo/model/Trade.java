@@ -11,6 +11,17 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Entity
 public class Trade {
 	
+	public Trade(String tradeID, int version, String counterPartyID, String bookID, Date maturityDate, Date createdDate,
+			boolean isExpired) {
+		super();
+		this.tradeID = tradeID;
+		this.version = version;
+		this.counterPartyID = counterPartyID;
+		this.bookID = bookID;
+		this.maturityDate = maturityDate;
+		this.createdDate = createdDate;
+		this.isExpired = isExpired;
+	}
 	@Id
 	@GeneratedValue
 	private int serialNo;
